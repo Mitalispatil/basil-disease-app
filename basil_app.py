@@ -7,6 +7,9 @@ from tensorflow.keras.models import load_model
 import joblib
 import plotly.express as px
 from sklearn.decomposition import PCA
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 st.set_page_config(page_title="🌿 Basil Leaf Disease Classifier", layout="wide")
 
@@ -70,7 +73,12 @@ def adapt_features(features, expected_dim):
 # ✅ Load models
 @st.cache_resource
 def load_main_model():
-    return load_model(r"D:\basil_disease_app\efficientnet_models\fine_tuned_efficientnet_model.h5", compile=False)
+    model_path = os.path.join(
+        BASE_DIR,
+        "efficientnet_models",
+        "fine_tuned_efficientnet_model.h5"
+    )
+    return load_model(model_path, compile=False)
 
 # @st.cache_resource
 # def load_finetuned_efficient_model(): 
@@ -82,11 +90,21 @@ def load_main_model():
 
 @st.cache_resource
 def load_svm_model():
-    return joblib.load(r"D:\basil_disease_app\EfficientNet_Models\svm_model.pkl")
+    model_path = os.path.join(
+        BASE_DIR,
+        "EfficientNet_Models",
+        "svm_model.pkl"
+    )
+    return joblib.load(model_path)
 
 @st.cache_resource
 def load_mobilenet_model():
-    return load_model(r"D:\basil_disease_app\MobileNet_Models\fine_tuned_model.h5", compile=False)
+    model_path = os.path.join(
+        BASE_DIR,
+        "MobileNet_Models",
+        "fine_tuned_model.h5"
+    )
+    return load_model(model_path, compile=False)
 
 # @st.cache_resource
 # def load_knn_mobilenet():
