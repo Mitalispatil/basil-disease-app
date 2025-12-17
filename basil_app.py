@@ -75,7 +75,7 @@ def adapt_features(features, expected_dim):
 def load_main_model():
     model_path = os.path.join(
         BASE_DIR,
-        "Efficientnet_Models",
+        "EfficientNet_Models",
         "fine_tuned_efficientnet_model.h5"
     )
     return load_model(model_path, compile=False)
