@@ -58,7 +58,7 @@ The final model is integrated into a **Streamlit web app**, where users can uplo
   pip install -r requirements.txt
 
 ## Run the Streamlit app:
-  streamlit run app.py
+  streamlit run basil_app.py
 
 ## 🧑‍💻 Author
 
