@@ -60,6 +60,8 @@ The final model is integrated into a **Streamlit web app**, where users can uplo
 ## Run the Streamlit app:
   streamlit run basil_app.py
 
+## Deployed At
+  https://basil-disease-app-3g7dtc37omlmygountfwxr.streamlit.app/
 ## 🧑‍💻 Author
 
 **Mitali Patil**  
